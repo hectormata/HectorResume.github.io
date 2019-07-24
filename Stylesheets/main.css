@@ -134,6 +134,10 @@ h1 {
     margin: 0.67em 0;
 }
 
+h1#userName.example {
+    animation:pop-in .6s ease-out forwards;
+}
+
 mark {
     background: #ff0;
     color: #000;
