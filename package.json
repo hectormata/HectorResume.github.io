@@ -3,7 +3,17 @@
   "version": "1.0.0",
   "description": "First version of resume that I have been working to get experience with front-end word",
   "author": "Hector Mata",
+  "keywords": [
+    "Software Engineer",
+    "Developer",
+    "resume",
+    "experience",
+    "Java",
+    "SQL",
+    "Full-Stack Developer"
+  ],
   "dependencies": {
     
-  }
+  },
+  "license": "MIT"
 }

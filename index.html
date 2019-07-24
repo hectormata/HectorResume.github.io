@@ -1,10 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
 
+<head>
+    <meta charset="utf-8">
+    <title>Resume | Hector Mata</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/main.css">
+    <script type="text/javascript" src="Scripts/gettingJson.js"> </script>
+    <script type="application/json" src="Data/Info.json"></script>
+    <script type="text/javascript">initialize()</script>
+</head>
+
+<body>
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="nine columns">
+                <h1 id="userName"></h1>
+                <p id="summaryQuote"></p>
+                <p id="summary">
+
+                </p>
+            </div>
+            <div class="three columns pic">
+                <img class="profile" src="images/pic.jpg" alt="">
+                <a href="mailto:hector.mata9@gmail.com">Email Me</a>
+                <a href="https://github.com/hectormata" target="_blank">Github</a>
+                <a href="https://www.linkedin.com/in/hector-mata-1009/" target="_blank">Linkedin</a>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <div class="maincontent">
+        <div class="row">
+            <div class="four columns timeline">
+                <h1>Experience</h1>
+                <h4 id="timeLine1"></h4>
+            </div>
+            <div class="seven columns offset-by-one">
+                <h2 id="company1"></h2>
+                <h3 id="positionCompany1"></h3>
+                <p id="summaryCompany1">
+
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="four columns timeline">
+                <h4 id="timeLine2">July 2018 - June 2019</h4>
+            </div>
+            <div class="seven columns offset-by-one">
+                <h2 id="company2">IDEMIA</h2>
+                <h3 id="positionCompany2">Data Analyst</h3>
+                <p id="summaryCompany2">
+                    Primarily in charge of automating existing reports to improve efficiency and save the
+                    department money. In the year I was there about 10 reports were automated, helped the department saved
+                    enough work hours equivalent to a full-time employee salary making 60K. The reports that I helped automated
+                    were scripts primarily wrote on VBA and secondarily Python. That include complex
+                    logic and Object Oriented Programming skills. In one instance I simplify a report that was performing about
+                    700 - 2000 iterations -depending on the type of report (daily, weekly, monthly)- to about 10 iterations
+                    using a binary search algorithm.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="four columns timeline">
+                <h4 id="timeLine3">September 2018 - January 2019</h4>
+            </div>
+            <div class="seven columns offset-by-one">
+                <h2 id="company3">Tuft Health Plan</h2>
+                <h3 id="positionCompany3">Software Developer</h3>
+                <p id="summaryCompany3">
+                    In this roles, I was faced with the challenge of learning a new language. Learning Lotus Notes framework
+                    initially was tough because it was new compared to anything I had done before. I was able to overcome my learning curve quickly
+                    due to my ability to identify patterns, allowing me to see the similarities with Visual Basic for Application
+                    helped expedite my learning process and set me up to work on software and application enhancements.
+                    One of my projects was to come up with a way to update multiple options inside a contract that were in our database to increase efficiency.
+                    As a second part, my goal was to improve efficiency of updates by doing N number of updates to do a bulk update.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="four columns timeline">
+                <h4 id="timeLine4">May 2016 - July 2018</h4>
+            </div>
+            <div class="seven columns offset-by-one">
+                <h2 id="company4">Enterprise Rent-A-Car</h2>
+                <h3 id="positionCompany4">Management Trainee Intern</h3>
+                <p id="summaryCompany4">
+                    Provided excellent customer service and committed to show a great work ethic and outperformed others.
+                    Due to my ability to work hard and be a top performer I was given more responsibilities than the average intern had.
+                    This role was heavily customer services and sales oriented. I excelled in the sales aspect of the role by providing
+                    honest, trustworthy, and amazing customer service to make the customer comfortable during the whole process. Constantly
+                    received performance awards on my sales numbers, by coming on tops of other interns, Management Trainees, Management Assistants,
+                    and even Assistant Managers and Managers.
+                </p>
+            </div>
+        </div>
+        <div class="row skills">
+            <div class="four columns">
+                <h1>Skills</h1>
+            </div>
+            <div class="seven columns offset-by-one">
+
+                <span>Java</span>
+                <span>SQL</span>
+                <span>Linux</span>
+                <span>Unix</span>
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>Javascript</span>
+                <span>Android</span>
+                <span>Python</span>
+                <span>C/C++</span>
+                <span>XML</span>
+                <span>Visual Basic for Application (VBA)</span>
+                <span>Project Management</span>
+                <span>Sales</span>
+                <span>Problem Solving</span>
+                <span>Microsoft Office</span>
+                <span>Animation Design</span>
+                <span>Agile Methodologies</span>
+                <span>JUnit</span>
+                <span>Negotiation</span>
+                <span>Team Leadership</span>
+            </div>
+        </div>
+        <div class="row education">
+            <div class="four columns">
+                <h1>Education</h1>
+            </div>
+            <div class="seven columns offset-by-one">
+                <h2>University of Massachusetts - Boston</h2>
+                <h3>Bachelor of Science and Mathematics - Computer Science</h3>
+                <p>Varsity Soccer Team 2012 - 2014 <br>
+                    Varsity Tennis Team 2014 - 2015
+                </p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        Hector Mata | <a href="mailto:hector.mata9@gmail.com">hector.mata9@gmail.com</a> | <a href="https://www.linkedin.com/in/hector-mata-1009/" target="_blank">Linkedin</a>
+    </footer>
+</div>
 </body>
+
+
 </html>
