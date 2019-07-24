@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "First version of resume that I have been working to get experience with front-end word",
   "author": "Hector Mata",
+  "repository": {
+    "type": "git",
+    "url": "https://hectormata.github.io/resume.github.io/"
+  },
+  "homepage": "https://github.com/hectormata/resume.github.io",
   "keywords": [
     "Software Engineer",
     "Developer",
