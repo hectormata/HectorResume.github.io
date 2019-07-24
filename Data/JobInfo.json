@@ -1,0 +1,44 @@
+{
+  "userName": "Hector Mata",
+  "userQuote": "Think \"outside the box\" Software Engineer and A.I Enthusiast",
+  "userSummary": "Self-Motivated Software Engineer with three year of experience in coding, testing and establishing system improvement that include both school work, and professional work. Ability to leverage full-stack knowledge and experience to build interactive and user-centered website designs to scale. Strong in design and integration problem-solving skills. My area of expertise include Java, SQL with database analysis and design, Python, Linux/Unix systems, HTML, CSS, Javascript. Always eager to find new challenges and always improve and expand my area of expertise. Skilled in requirements specifications, user documentation. String written and verbal communications.",
+  "userExperience": [
+    {
+      "Company": "CVS",
+      "Position": "Software Engineer",
+      "Description": "As a Software Engineer, I work on making changes to existing large scale application and use Java to primarily\n                        do backend development. Also, use SQL, Linux/Unix Systems.\n                        There is a lot of problem solving situations in this position as I also do production\n                        support for the retail side of cvs. Using such problem solving skills help me improve\n                        my software development skills because I have to learn and review code for large application to get up to speed and understand\n                        how the application work to be able to do any sort of changes.",
+      "Timeline": "January 2019 - Current"
+    },
+    {
+      "Company": "IDEMIA",
+      "Position": "Data Analyst",
+      "Description": "Primarily in charge of automating existing reports to improve efficiency and save the\n                        department money. In the year I was there about 10 reports were automated, helped the department saved\n                        enough work hours equivalent to a full-time employee salary making 60K. The reports that I helped automated\n                        were scripts primarily wrote on VBA and secondarily Python. That include complex\n                        logic and Object Oriented Programming skills. In one instance I simplify a report that was performing about\n                        700 - 2000 iterations -depending on the type of report (daily, weekly, monthly)- to about 10 iterations\n                        using a binary search algorithm.",
+      "Timeline": "July 2018 - June 2019"
+    },
+    {
+      "Company": "Tufts Health Plan",
+      "Position": "Software Developer",
+      "Description": "In this roles, I was faced with the challenge of learning a new language. Learning Lotus Notes framework initially was tough because it was new compared to anything I had done before. I was able to overcome my learning curve quickly due to my ability to identify patterns, allowing me to see the similarities with Visual Basic for Application helped expedite my learning process and set me up to work on software and application enhancements. One of my projects was to come up with a way to update multiple options inside a contract that were in our database to increase efficiency. As a second part, my goal was to improve efficiency of updates by doing N number of updates to do a bulk update.",
+      "Timeline": "September 2018 - January 2019"
+    },
+    {
+      "Company": "Enterprise Rent-A-Car",
+      "Position": "Management Trainee Intern",
+      "Description": "As Trainee, I provided excellent customer service and committed to show a great work ethic and outperformed others. Due to my ability to work hard and be a top performer I was given more responsibilities than the average intern had. This role was heavily customer services and sales oriented. I excelled in the sales aspect of the role by providing honest, trustworthy, and amazing customer service to make the customer comfortable during the whole process. Constantly received performance awards on my sales numbers, by coming on tops of other interns, Management Trainees, Management Assistants, and even Assistant Managers and Managers.",
+      "Timeline": "May 2016 - July 2018"
+    }
+  ],
+  "Skills": [
+    "Java", "SQL", "Linux", "Unix", "HTML", "HTML5", "CSS", "Javascript", "JSON", "Bash Scripting", "Android", "Python", "C/C++", "Visual Basic for Application (VBA)", "JUnit", "Negotiation", "Sales", "Project Management", "Problem Solving", "Agile Methodologies",
+    "Spring Framework", "Data Analysis", "Web Development", "Web Applications", "PHP"
+  ],
+  "Education":[
+    {
+      "School":  "University of Massachusetts - Boston",
+      "Degree": "Bachelor of Science and Mathematics - Computer Science",
+      "Activities": [
+        "Varsity Soccer Team 2012 - 2014", "Varsity Tennis Team 2014 - 2015"
+      ]
+    }
+  ]
+}
