@@ -135,7 +135,17 @@ h1 {
 }
 
 h1#userName.example {
-    animation:pop-in .6s ease-out forwards;
+    animation-duration: 3s;
+    animation-name: slidein;
+    animation-iteration-count: infinite;
+}
+
+h2#company1,h2#company2,h2#company3,h2#company4,h2#school1,img.jobLogos {
+
+    width: 10%;
+    height: 30px;
+    object-fit: scale-down;
+    display: inline;
 }
 
 mark {
