@@ -1,4 +1,4 @@
-const fileLoc = "\"/Data/buttonsCount.json\"";
+const fileLoc = "\"https://hectormata.github.io/resume.github.io/Data/buttonsCount.json\"";
 var obj = {
     table:[]
 };
