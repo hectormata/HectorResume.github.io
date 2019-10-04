@@ -11,4 +11,4 @@ function fetchJSONFile(path, callback) {
     httpRequest.open('GET', path);
     httpRequest.send();
 }
-fetchJSONFile("https://api.github.com/users/github/Data/JobInfo.json",console.log)
+fetchJSONFile("https://hectormata.github.io/resume.github.io/Data/buttonsCount.json",console.log)
