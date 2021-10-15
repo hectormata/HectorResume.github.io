@@ -57,7 +57,7 @@ a.emailLink {
     display: inline-block;
     height: 38px;
     padding: 0 30px;
-    color: blue;
+    color: white;
     text-align: center;
     font-size: 11px;
     font-weight: 600;
@@ -79,7 +79,7 @@ a.githubLink {
     display: inline-block;
     height: 38px;
     padding: 0 37px;
-    color: blue;
+    color: white;
     text-align: center;
     font-size: 11px;
     font-weight: 600;
@@ -100,7 +100,7 @@ a.linkedinLink {
     display: inline-block;
     height: 38px;
     padding: 0 31px;
-    color: blue;
+    color: white;
     text-align: center;
     font-size: 11px;
     font-weight: 600;
@@ -140,6 +140,7 @@ h1#userName.example {
     animation-iteration-count: infinite;
 }
 
+h2#company0,
 h2#company1,
 h2#company2,
 h2#company3,
@@ -333,8 +334,9 @@ header {
 header .pic {
     text-align: center;
 }
+ /*Lined up link squares */
 @media (min-width: 1000px) {
-    header .pic {
+    header .pic .a.emailLink .a.githubLink .a.linkedinLink {
         text-align: left;
     }
 }
@@ -413,12 +415,14 @@ hr {
         left: 12px;
         float: right;
         border: 4px solid #ffffff;
-        box-shadow: 0px 0px 0px 3px black;
+        box-shadow: 0 0 0 3px black;
         border-radius: 100%;
     }
 }
+.testimonies,
 .skills,
 .education,
+.contactMe,
 footer {
     border-top: 1px solid black;
     padding: 35px 0;
@@ -783,3 +787,659 @@ input[type="email"], input[type="number"], input[type="search"], input[type="tex
     box-sizing: border-box;
 }
 
+#testimonials hr {
+    border-width: 2px;
+    border-color: grey;
+    max-width: 150px;
+    margin-bottom: 30px;
+}
+#quote-carousel {
+    padding: 0 10px 30px 10px;
+    margin-top: 30px;
+}
+#quote-carousel .carousel-control{
+    background: none;
+    color: #222;
+    font-size: 2.3em;
+    text-shadow: none;
+    margin-top: 30px;
+    width: 5%;
+}
+#quote-carousel .carousel-control.left {
+    text-align: left;
+}
+#quote-carousel .carousel-control.right {
+    text-align: right;
+}
+#quote-carousel .carousel-indicators {
+    right: 50%;
+    top: auto;
+    bottom: 0px;
+    margin-right: -19px;
+}
+#quote-carousel .carousel-indicators li {
+    background: rgba(192, 192, 192, 1);
+    width: 20px;
+    height: 20px;
+    margin: 1px;
+}
+#quote-carousel .carousel-indicators .active {
+    background: rgba(51, 51, 51, 1);
+}
+#testimonials .carousel-control {
+    color: rgba(0,0,0,0.5) !important;
+    opacity: 1 !important;
+}
+#testimonials .carousel-control:hover {
+    color: rgba(0,0,0,0.8) !important;
+    opacity: 1 !important;
+}
+#quote-carousel img {
+    width: 100px;
+    height: 100px;
+    border: none;
+    border-rounded: 50px;
+}
+.item blockquote {
+    border-left: none;
+    margin: 0;
+}
+.item blockquote img {
+    margin-bottom: 10px;
+}
+.item p {
+    text-align: left;
+    padding: 0px 30px;
+    color: rgba(0,0,0,1)
+}
+.item small {
+    text-align: left;
+    padding: 0px 30px;
+    color: grey
+}
+.item blockquote p:before {
+    float: left;
+    margin-right: 10px;
+}
+@media (min-width: 800px) {
+    #quote-carousel {
+        margin-bottom: 0;
+        padding: 0 40px 30px 40px;
+    }
+}
+@media (max-width: 800px) {
+    #quote-carousel .carousel-indicators {
+        bottom: -20px !important;
+    }
+    #quote-carousel .carousel-indicators li {
+        display: inline-block;
+        margin: 0px 5px;
+        width: 20px;
+        height: 20px;
+    }
+    #quote-carousel .carousel-indicators li.active {
+        margin: 0px 5px;
+        width: 20px;
+        height: 20px;
+    }
+}
+
+
+/* */
+/* Parent wrapper to carousel. Width can be changed as needed. */
+.carousel-wrapper {
+    overflow: hidden;
+    width: 90%;
+    margin: auto;
+}
+
+/* Apply 'border-box' to 'box-sizing' so border and padding is included in the width and height. */
+.carousel-wrapper * {
+    box-sizing: border-box;
+}
+
+/* We'll be using the 'transform' property to move the carousel's items, so setting the 'transform-style' to 'preserve-3d' will make sure our nested elements are rendered properly in the 3D space. */
+.carousel {
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+/* By default we're hiding items (except the initial one) until the JS initiates. Elements are absolutely positioned with a width of 100% (as we're styling for mobile first), letting the content's height dictate the height of the carousel. Our magic property here for all our animation needs is 'transition', taking the properties we wish to animate 'transform' and 'opacity', along with the length of time in seconds. */
+.carousel__Quote {
+    opacity: 0;
+    position: absolute;
+    top:0;
+    width: 100%;
+    margin: auto;
+    padding: 1rem 4rem;
+    z-index: 100;
+    transition: transform .5s, opacity .5s, z-index .5s;
+}
+
+/* Display the initial item and bring it to the front using 'z-index'. These styles also apply to the 'active' item. */
+.carousel__Quote.initial,
+.carousel__Quote.active {
+    opacity: 1;
+    position: relative;
+    z-index: 900;
+}
+
+/* Set 'z-index' to sit behind our '.active' item. */
+.carousel__Quote.prev,
+.carousel__Quote.next {
+    z-index: 800;
+}
+
+/* Translate previous item to the left */
+.carousel__Quote.prev {
+    transform: translateX(-100%);
+}
+
+/* Translate next item to the right */
+.carousel__Quote.next {
+    transform: translateX(100%);
+}
+
+/* Style navigation buttons to sit in the middle, either side of the carousel. */
+.carousel__button--prev,
+.carousel__button--next {
+    position: absolute;
+    top:50%;
+    width: 3rem;
+    height: 3rem;
+    background-color: #FFF;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1001; /* Sit on top of everything */
+    border:1px solid black;
+    /*  opacity: 0;  Hide buttons until carousel is initialised
+      transition:opacity 1s;*/
+}
+
+.carousel__button--prev {
+    left:0;
+}
+
+.carousel__button--next {
+    right:0;
+}
+
+/* Use pseudo elements to insert arrows inside of navigation buttons */
+.carousel__button--prev::after,
+.carousel__button--next::after {
+    content: " ";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 50%;
+    left: 54%;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    transform: translate(-50%, -50%) rotate(135deg);
+}
+
+.carousel__button--next::after {
+    left: 47%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+#trigger-overlay {
+    background: transparent;
+    border: none;
+    outline: none;
+    float: right;
+    margin-top: 2.5px;
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.overlay .overlay-close {
+    font-size: 19px;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    overflow: hidden;
+    border: none;
+    background: rgb(243, 156, 18);
+    color: rgb(255,255,255) !important;
+    outline: none;
+}
+
+.overlay nav {
+    text-align: center;
+    position: relative;
+    top: 50%;
+    height: 60%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.overlay ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: inline-block;
+    height: 100%;
+    position: relative;
+}
+
+.overlay ul li {
+    display: block;
+    height: 20%;
+    height: calc(100% /7);
+    min-height: 54px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.overlay nav {
+    text-align: center;
+    position: relative;
+    top: 50%;
+    height: 60%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+
+
+
+
+.navbar-brand {
+    padding: 0;
+}
+#shopButton {
+    text-shadow: none;
+    padding: 10px 40px;
+    border-radius: 0;
+    border: none;
+}
+#bookButton {
+    text-shadow: none;
+    padding: 10px 40px;
+    border-radius: 0;
+    border: none;
+}
+#subscribeButton {
+    text-shadow: none;
+    padding: 10px 40px;
+    border-radius: 0;
+    border: none;
+}
+.contactForm .input-group-addon {
+    font-size: 16px;
+}
+.contactForm .input-group input, textarea {
+    height: 50px;
+    border-bottom-right-radius: 10px !important;
+    border-top-right-radius: 10px !important;
+    font-weight: bold;
+    font-size: 18px;
+}
+.contactForm textarea {
+    border-bottom-right-radius: 10px !important;
+    border-top-right-radius: 10px !important;
+    font-weight: bold;
+    font-size: 18px;
+}
+.contactForm label {
+    font-size: 18px;
+}
+#contactButton {
+    text-shadow: none;
+    padding: 10px 40px;
+    border-radius: 0;
+    border: none;
+    font-size: 18px;
+    margin-top: 10px;
+}
+.overlay {
+      position: fixed;
+      width: 20%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 9999;
+  }
+@media only screen and (max-width : 800px) {
+    .overlay {
+        width: 40%;
+    }
+}
+@media only screen and (max-width : 400px) {
+    .overlay {
+        width: 65%;
+    }
+}
+#trigger-overlay {
+    background: transparent;
+    border: none;
+    outline: none;
+    float: right;
+    margin-top: 2.5px;
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    z-index: 100;
+    cursor: pointer;
+}
+#trigger-overlay i {
+    color: rgb(255,255,255);
+    font-size: 25px;
+    padding: 11px 14px;
+    background: rgba(0,0,0,0.75);
+}
+.overlay .overlay-close {
+    font-size: 19px;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    overflow: hidden;
+    border: none;
+    background: rgb(243, 156, 18);
+    color: rgb(255,255,255) !important;
+    outline: none;
+}
+.overlay nav {
+    text-align: center;
+    position: relative;
+    top: 50%;
+    height: 60%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.overlay ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: inline-block;
+    height: 100%;
+    position: relative;
+}
+.overlay ul li {
+    display: block;
+    height: 20%;
+    height: calc(100% /7);
+    min-height: 54px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.overlay ul li a {
+    font-size: 22px;
+    display: block;
+    color: rgb(255,255,255);
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s;
+    letter-spacing: 2px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.overlay ul li a:hover,
+.overlay ul li a:focus {
+    color: rgb(243, 156, 18);
+    text-decoration: none;
+}
+.overlay-open::after {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transition: opacity 0.5s;
+    transition: opacity 0.5s;
+}
+.overlay-contentpush {
+    background: rgba(0,0,0,0.75);
+    visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+    -webkit-transition: -webkit-transform 0.5s, visibility 0s 0.5s;
+    transition: transform 0.5s, visibility 0s 0.5s;
+}
+.overlay-contentpush.open {
+    visibility: visible;
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+}header .btn {
+     border: solid 2px rgb(255,255,255);
+     color: rgb(255,255,255);
+     background: rgb(243, 156, 18);
+     text-transform: none;
+     margin-top: 20px;
+     font-size: 20px;
+     margin-right: 10px;
+ }
+header .btn:hover {
+    background: rgb(255,255,255) !important;
+    color: white !important;
+    border: solid 2px rgb(255,255,255) !important;
+}
+header .btn::selection {
+    color: rgb(255,255,255);
+}
+header .btn::-moz-selection {
+    color: rgb(255,255,255);
+}
+header .btn:active {
+    color: rgb(255,255,255);
+}
+header .btn:active {
+    color: rgb(255,255,255);
+}
+#singleImageHeader {
+    background-repeat: no-repeat !important;
+    background-size: cover, 100% 100% !important;
+    background-position: 50% 50%, center !important;
+}
+.contactForm textarea {
+    resize: none;
+    height: 150px !important;
+}
+.sweet-alert h2 {
+    font-size: 30px !important;
+    text-shadow: none !important;
+    text-transform: none !important;
+}
+.user-stats {
+    width: 80%;
+    left: 10%;
+    margin-top: 40px;
+}
+#sEmail {
+    height: 30px;
+}
+.outerGrid {
+    display: inline-grid;
+    position: relative;
+}
+.innerGridTable {
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+.innerTableContent {
+    display: table-cell;
+    vertical-align: middle;
+}
+.customFrameElem {
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.insertNewBtn {
+    font-size: 30px;
+}
+@media only screen and (max-width : 800px) {
+    .affix-top .navbar-nav>li>a {
+        color: rgb(255,255,255) !important;
+    }
+    .affix-top #pageTitle {
+        color: rgb(255,255,255) !important;
+    }
+    .row {
+        display: initial !important;
+        margin: 0;
+    }
+    .col-md-10 {
+        width: 100%;
+    }
+    .headerSectionDiv {
+        margin-top: 80px;
+        text-align: center !important;
+        display: block !important;
+        margin-bottom: 80px;
+    }
+    .headerContentContainer {
+        display: block !important;
+    }
+    .extraTextSection {
+        position: initial !important;
+        width: 100%;
+    }
+    .extraTextSectionLeft {
+        margin-bottom: 50px;
+    }
+    .extraTextSectionRight {
+        margin-top: 50px;
+    }
+    header .newsLetterForm {
+        width: 60%;
+        left: 20%;
+    }
+    .user-stats {
+        width: 60%;
+        left: 20%;
+    }
+}
+@media only screen and (max-width : 400px) {
+    .headerSectionDiv {
+        text-align: center !important;
+        margin-top: 80px;
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: 80px;
+    }
+    .pSection {
+        margin-top: 20px !important;
+    }
+    header .newsLetterForm {
+        width: 100%;
+        left: 0;
+    }
+    .user-stats {
+        width: 100%;
+        left: 0%;
+    }
+}
+
+.headerContainer {
+    margin-top: 50px;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
+    padding-bottom: 50px;
+}
+#mainTitleSection {
+    display: table !important;
+    height: 100%;
+    table-layout: fixed;
+}
+.headerContentContainer {
+    vertical-align: middle;
+    display: table-cell !important;
+    padding-bottom: 20px;
+    padding-top: 50px;
+}
+.newsLetterForm .input-group {
+    margin-left: 10%;
+    width: 80%;
+}
+.newsLetterForm input {
+    height: 30px;
+}
+.contactForm input {
+    height: 30px;
+}
+.pSection {
+    position: relative;
+    margin-top: 20px !important;
+    display: table;
+    height: 100%;
+}
+.pContainer {
+    display: table;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    text-align: center;
+}
+.aboutP {
+    display: table-cell;
+    height: 100%;
+    vertical-align: middle;
+    font-size: 16px;
+}
+.galleryItem img {
+    min-width: 20px;
+    min-height: 20px;
+}
+
+@media only screen and (max-width : 800px) {
+    .headerSectionDiv {
+        width: 100%;
+    }
+    .navbar-header img {
+        max-height: 45px !important;
+    }
+    #pageTitle {
+        padding-left: 10px;
+    }
+}
+@media only screen and (max-width : 400px) {
+    #pageTitle {
+        padding-top: 20px !important;
+    }
+}#mainSubtitle {
+     color: rgb(255,255,255);
+     text-transform: none;
+ }#mainTitle {
+      color: rgb(255,255,255);
+      text-transform: none;
+  }.sectionTitle {
+       font-size: 50px;
+       text-align: center;
+       text-transform: none;
+       color: rgb(0,0,0);
+   }
+.sectionSubtitle {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 50px;
+    text-transform: none;
+    color: rgb(0,0,0);
+}
+.pageSection {
+    padding: 50px 20px;
+    text-align: center;
+    position: relative;
+}
+.pageSection p {
+    padding: 0px 20px;
+}
+.descriptionText {
+    font-size: 18px;
+}.descriptionText {
+     font-size: 18px;
+ }

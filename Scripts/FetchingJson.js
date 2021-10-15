@@ -1,9 +1,9 @@
 function fetchJSONFile(path, callback) {
-    var httpRequest = new XMLHttpRequest();
+    const httpRequest = new XMLHttpRequest();
     httpRequest.onreadystatechange = function() {
         if (httpRequest.readyState === 4) {
             if (httpRequest.status === 200) {
-                var data = JSON.parse(httpRequest.responseText);
+                const data = JSON.parse(httpRequest.responseText);
                 if (callback) callback(data);
             }
         }
@@ -11,4 +11,4 @@ function fetchJSONFile(path, callback) {
     httpRequest.open('GET', path);
     httpRequest.send();
 }
-fetchJSONFile("https://hectormata.github.io/resume.github.io/Data/buttonsCount.json",console.log)
+fetchJSONFile("https://hectormata.github.io/resume.github.io/Data/buttonsCount.json",console.log);

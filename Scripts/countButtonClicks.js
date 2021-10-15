@@ -1,13 +1,13 @@
 const fileLoc = "\"https://hectormata.github.io/resume.github.io/Data/buttonsCount.json\"";
-var obj = {
-    table:[]
+let obj = {
+    table: []
 };
 
 obj.table.push({emailCount:0, githubCount:0, linkedinCount:0});
 
-var json = JSON.stringify(obj);
+let json = JSON.stringify(obj);
 
-var fs = require("fs");
+const fs = require("fs");
 fs.writeFile(fileLoc, json, "UTF-8", callback);
 
 fs.readFile(fileLoc, "UTF-8", function readFileCallback(err, data){
